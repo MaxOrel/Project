@@ -1,0 +1,65 @@
+mixin ul(className, mod, items)
+    ul(class=`${className} ${className}--${mod}`)
+        each link, item in items
+            li(class=`${className}__item`)
+                a(class=`${className}__link`, href=`${link}`, target='_blank')
+                    svg(class=`${className}__icon ${className}__icon--${item}`)
+                        use(xlink:href="assets/images/sprite.svg#icons--" + item)
+
+mixin nav(className, items)
+    nav(class=`${className}`)
+        ul(class=`${className}__list`)
+            each link, item in items
+                li(class=`${className}__item`)
+                    a(class=`${className}__link`, href=`${link}`)=item
+
+mixin blockTitle(title, mod)
+    .block-title__wrapper
+        .block-title(class=`block-title--${modificator}`)
+            h4.block-title__text= title
+
+mixin checkbox(item, text, type, value)
+    div(class=`checkbox`)
+        div(class=`checkbox__box checkbox__box--${type}`)
+            input(class=`checkbox__input`, value=value, id=item, name=item, type=type)
+            label(class=`checkbox__label`)
+        p(class=`checkbox__text`)=text
+
+mixin sectionTitle(svg, title, mod)
+    .section-title(class=`section-title--${mod}`)
+        svg.section-title__img
+            use(xlink:href="assets/images/sprite.svg#icons--" + svg)
+        h2.section-title__text=title
+
+mixin skillsList(items)
+    ul.sec-skills-list
+        each item, mod in items
+            li.skills-list__item
+                .skill
+                    svg.skill__circle
+                        circle.skills__circle-under(cx="50%" cy="50%" r="50")
+                        circle.skills__circle-above(class=`skills__circle-above--${modificator}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                    h6.skill__title=item
+
+mixin leftTriangle(mod)
+    svg.triangle.triangle__left(class=`triangle--${mod}` viewbox="0 0 1000 150" preserveAspectRatio="none")
+        polygon(points="0,0 0,150 1000, 150")
+
+mixin rightTriangle(mod)
+    svg.triangle.triangle__right(class=`triangle--${mod}` viewbox="0 0 1000 150" preserveAspectRatio="none")
+        polygon(points="0,150 1000,150 1000,0")
+
+mixin arrow(mod)
+    svg.arrow#arrow(class=`arrow--${mod}` viewBox="0 0 25.18 16.164")
+        use(xlink:href="assets/images/sprite.svg#icons--arrow_down")
+
+mixin form(className, items, textarea)
+    form(class=`${className}`, method='post', action='')
+        each type, item in items
+            fieldset(class=`${className}__item`)
+                label(class=`${className}__lebel`)
+                    input(class=`${className}__input`, name=type, type=type,  placeholder=item, required)
+        each type, item in textarea
+            fieldset(class=`${className}__item`)
+                label(class=`${className}__lebel`)
+                    textarea(class=`${className}__textarea`, name=type, placeholder=item)

@@ -1,0 +1,18 @@
+.arrow {
+  display: block;
+  opacity: .7;
+  fill: $white;
+  max-width: 26px;
+  max-height: 16px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all .5s;
+  &:hover, &:focus {
+    opacity: 1;
+  }
+  &--hero {
+    position: absolute;
+    @include centered(x);
+    bottom:0;
+  }
+}

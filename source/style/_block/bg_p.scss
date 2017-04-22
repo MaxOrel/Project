@@ -1,0 +1,10 @@
+.bgparallax {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  text-align: center;
+  background-image: url('../images/bg-main.jpg');
+  @include background();
+  background-position: center top;
+}

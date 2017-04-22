@@ -1,0 +1,21 @@
+.triangle {
+  display: block;
+  height: 150px;
+  position: absolute;
+  bottom: 99.9%;
+  width: 50%;
+  &__left {
+    left: 0;
+  }
+  &__right {
+    right: 0;
+  }
+}
+.triangle--about {
+  &.triangle__left {
+    fill: $lightGray;
+  }
+  &.triangle__right {
+    fill: $beige;
+  }
+}

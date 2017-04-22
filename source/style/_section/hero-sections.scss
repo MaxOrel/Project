@@ -1,0 +1,47 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 442px;
+  max-height:442px;
+  &.active {
+    position: static;
+  }
+  &__background {
+    @include centered(max);
+    z-index: 0;
+    height: 120%;
+    &:after {
+      background-color: rgba(1, 102, 114, .3);
+      content: '';
+      @include centered(max);
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+  &__inner {
+    z-index: 2;
+    padding: 28px 30px;
+    @include centered(max);
+  }
+  &__portfolio {
+    margin: 0 auto;
+    max-height: 300px;
+    max-width: 1180px;
+    opacity: .06;
+    @include centered(fullX);
+    top:-40px;
+    width: 100%;
+    fill: $white;
+  }
+  &__content {
+    width: 100%;
+    text-align: center;
+    left:0;
+    @include centered(y);
+  }
+}

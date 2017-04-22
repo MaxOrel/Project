@@ -1,0 +1,81 @@
+extends ../_template
+
+block content
+    .wrapper
+        +hero()
+        +hamburger()
+        +navigation()
+        section.section.about
+            .about__col.about__col--left
+                +leftTriangle('about')
+                .about__wrapper.about__wrapper--left
+                    .about__title
+                        +sectionTitle('about_header', 'Обо мне', 'about')
+                    .c-about
+                        .c-about__pic(style="background-image: url('assets/images/avatar.jpg')")
+                        +blockTitle('Кто я', 'about')
+                        .block-text
+                            p
+                                | Я веб разработчик из Орла. Мне 25 лет.
+                                | Я занимаюсь разработкой современных сайтов
+                                | и приложений. Мне нравится делать интересные
+                                | и современные проекты.
+                            p
+                                | Этот сайт я сделал в рамках обучения в Школе онлайн
+                                | образования LoftSchool. Чуть позже я освежу в нём
+                                | свой контент. А пока посмотрите,
+                                | как тут всё классно и красиво!
+            .about__col.about__col--right
+                +rightTriangle('about')
+                .about__wrapper.about__wrapper--right
+                    .skills
+                        +blockTitle('Чем я могу быть Вам полезен', 'skills')
+                        .block-text
+                            p
+                                | Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не
+                                | сложные задачи на Backend. Но давайте по порядку.
+                        ul.sec-skills-group
+                            li.sec-skills-group__item
+                                h5.sec-skills-group__title Frontend
+                                +skillsList({
+                                    html: 'HTML5',
+                                    css: 'CSS3',
+                                    js: 'JavaScript & jQuery'
+                                })
+                            li.sec-skills-group__item
+                                h5.sec-skills-group__title Backend
+                                +skillsList({
+                                    php: 'PHP',
+                                    mySQL: 'mySQL',
+                                    npm: 'Node.js & npm',
+                                    mongo: 'Mongo.db'
+                                })
+                            li.sec-skills-group__item
+                                h5.sec-skills-group__title WorkFlow
+                                +skillsList({
+                                    git: 'Git',
+                                    gulp: 'Gulp',
+                                    bower: 'Bower'
+                                })
+        section.section.sec-map
+            .map#map
+            .sec-contacts
+                +blockTitle('Контакты', 'contacts')
+                ul.contacts
+                    li.contacts__item
+                        a.contacts__link.contacts__link--skype(href='skype:makes057') makes057
+                            svg.contacts__icon
+                                use(xlink:href="assets/images/sprite.svg#icons--skype")
+                    li.contacts__item
+                        a.contacts__link.contacts__link-mail(href='mailto:maxim_91@inbox.ru') maxim_91@inbox.ru
+                            svg.contacts__icon
+                                use(xlink:href="assets/images/sprite.svg#icons--envelope")
+                    li.contacts__item
+                        a.contacts__link.contacts__linl--tel(href='tel:+7(953)611-56-63') +7(953)611-56-63
+                            svg.contacts__icon
+                                use(xlink:href="assets/images/sprite.svg#icons--phone")
+                    li.contacts__item
+                        a.contacts__link.contacts__link-address г.Орел, ул.Комсомольская, д.66 офис 313
+                            svg.contacts__icon
+                                use(xlink:href="assets/images/sprite.svg#icons--map_marker")
+        +footer('about')
