@@ -1,0 +1,96 @@
+//Style for form of feedback
+.feedback {
+  &__bg {
+    filter: blur(4px);
+    background-image: url('../images/bg-footer.png');
+    @include centered(max);
+    background-size: 100%;
+    z-index: -1;
+    background-repeat: repeat;
+  }
+  &__wrapper {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto 70px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+  &__inner {
+    padding: 30px 20px 16px;
+    z-index: 0;
+    position: relative;
+
+  }
+  &__validation {
+    position: absolute;
+    top: 5rem;
+    left:0;
+    right:0;
+    color: red;
+    padding: 0 20px;
+  }
+}
+
+.feedback-form {
+  &__item {
+    border: none;
+    margin: 0;
+    margin-bottom: 22px;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  &__input, &__textarea {
+    width: 100%;
+    border: none;
+    background-color: $white;
+    color: $sectionTitle;
+    padding: 12px 20px;
+    line-height: 1;
+    @include roboto;
+    outline: none;
+    font-size: $middleFont;
+    &::-webkit-input-placeholder {
+      color: rgba(55, 62, 66, .5);
+      @include roboto;
+    }
+    &:focus {
+      outline: none;
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+    }
+  }
+  &__textarea {
+    height: 140px;
+  }
+}
+.feedback-buttons {
+  display: flex;
+  width:100%;
+}
+.feedback-button {
+  width:50%;
+  color: $white;
+  display: inline-block;
+  border: none;
+  outline:none;
+  padding: 14px;
+  font-size: $middleFont;
+  cursor: pointer;
+  transition: all .5s;
+  &:hover, &:focus {
+    background-color: rgba(0, 191, 165, 1);
+  }
+  &--send {
+    background-color: rgba(0, 191, 165, .8  );
+  }
+  &--clear {
+    background: #268c8b;
+  }
+}

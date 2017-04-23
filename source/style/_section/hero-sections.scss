@@ -45,3 +45,20 @@
     @include centered(y);
   }
 }
+
+.hero--blog {
+  min-height: 380px;
+  max-height: 300px;
+  .hero__background {
+    background-position: center 10%;
+  }
+  .hero__inner {
+    max-width: 1200px;
+    padding: 30px;
+  }
+  .l-hero__content {
+    position: relative;
+    transform: none;
+    margin-top: 25px;
+  }
+}

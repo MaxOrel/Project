@@ -15,4 +15,12 @@
     @include centered(x);
     bottom:0;
   }
+  &--feedback {
+    margin: 0 auto;
+    transform: rotate(180deg);
+    margin-bottom: 70px;
+  }
+  &--blog {
+    display: none;
+  }
 }
