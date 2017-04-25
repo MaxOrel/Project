@@ -1,0 +1,14 @@
+mixin hero-blog()
+    section.section.hero.hero--blog
+        .hero__background
+            img(src='assets/images/bg-main.jpg')
+        .section__wrapper.hero__inner
+            +ul('social', 'hero', {vk:'https://vk.com/max_orel', github:'https://github.com/MaxOrel', in:'https://github.com/MaxOrel'})
+            .lero__content
+                svg.section-title__img.section-title__img--blog(viewBox="0 0 302.193 208.012")
+                    use(xlink:href="assets/images/sprite.svg#icons--blog_header")
+                .section-title.section-title--blog
+                    .user__face
+                    h2.section-title__text Блог
+                    p.section-title__extra Статьи, которые я написал
+            +arrow('blog ')

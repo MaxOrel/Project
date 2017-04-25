@@ -1,0 +1,52 @@
+.login-form {
+  margin-bottom: 20px;
+  &__item {
+    border: none;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    padding-left: 45px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    &:before {
+      content: '';
+      width:45px;
+      height: 45px;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left:0;
+      background-color: #f0efe9;
+      background-position: 15px 14px;
+      background-repeat: no-repeat;
+      background-image: url('../images/sprite.png');
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:nth-child(2):before {
+      background-position: -20px 14px;
+    }
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: $white;
+    color: $sectionTitle;
+    padding: 13px 18px;
+    @include roboto;
+    outline: none;
+    font-size: $middleFont;
+    &::-webkit-input-placeholder {
+      color: rgba(55, 62, 66, .5);
+      @include roboto;
+    }
+    &:focus {
+      outline: none;
+      &::-webkit-input-placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+//Style for navigation of welcome section
+.nav-welcome {
+  @include centered(fullX);
+  bottom: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    background-color: $indexGreen;
+    position: relative;
+    flex-grow: 1;
+    opacity: 0.85;
+    &:before {
+      @include centered(fullY);
+      left:-2px;
+      width: 2px;
+      content: '';
+      background-color: #dee3e7;
+      opacity: .5;
+    }
+    &:before:first-child {
+      content: none;
+    }
+  }
+  &__link {
+    color: $white;
+    background-color: #10c1a8;
+    padding: 6.5px 30px;
+    line-height: 2;
+    display: block;
+    font-weight: $regularFont;
+    font-size: $middleFont;
+    border: none;
+    outline: none;
+    @include roboto;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover {
+      background-color: $darkGreen;
+    }
+  }
+}

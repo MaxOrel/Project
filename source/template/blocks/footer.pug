@@ -1,0 +1,14 @@
+mixin footer(className)
+    .footer(class=`footer--${className}`)
+        .footer__top
+            .footer__top-content.section__wrapper
+                +nav('footer-nav', {
+                    'Мои работы': './portfolio.html',
+                    'Обо мне': './about.html',
+                    'Блог': './blog.html',
+                    'Авторизация': './index.html'
+                })
+                +ul('social', 'footer', {vk_round:'https://vk.com/max_orel', github_round:'https://github.com/MaOrel', in_round:'https://github.com/MaxOrel'})
+        .footer__bottom.section__wrapper
+            p Я веб-разработчик из Орла, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
+            p © Иванов Максим | создано с любовью в LoftSchool | 2017

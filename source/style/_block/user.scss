@@ -1,0 +1,46 @@
+//Basic style for user-block
+.user {
+  margin-bottom: 20px;
+  &__face {
+    width: 100%;
+    min-width: 141px;
+    max-width: 141px;
+    height: 141px;
+    background: url('../images/avatar.jpg') no-repeat center 0/cover;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+  }
+  &__name {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    font-weight: $mediumFont;
+  }
+  &__desc {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: .8;
+  }
+}
+
+//-Style for user-block in section of welcome
+.user--welcome {
+  color: $darkGray;
+  margin-bottom: 40px;
+  .user__face {
+    margin: 0 auto 15px;
+  }
+  .user__name {
+    margin-bottom: 7px;
+  }
+}
+
+//-Style for user-block in section of hero
+.user--hero {
+  color: $white;
+  .user__name {
+    font-size: 2.1875rem;
+  }
+  .user__desc {
+    font-weight: $lightFont;
+  }
+}

@@ -1,0 +1,58 @@
+.social {
+  display: inline-block;
+  &__item {
+    display: inline-block;
+    margin-left: 27px;
+    vertical-align: middle;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    display: block;
+  }
+  &__icon {
+    max-width: 31px;
+    max-height: 26px;
+    opacity: .5;
+    vertical-align: top;
+    transition: all .5s;
+    &:hover {
+      opacity: 1;
+    }
+    &--github {
+      max-width: 26px;
+      max-height: 22px;
+    }
+    &--in {
+      max-width: 24px;
+      max-height: 22px;
+    }
+  }
+}
+
+//-Style for social icons in section of welcome
+.social--welcome {
+  .social__icon {
+    fill: $indexGreen;
+  }
+}
+
+//-Style for social icons in section of hero
+.social--hero {
+  .social__icon {
+    fill: $white;
+  }
+}
+
+//-Style for social icons in section of hero
+.social--footer {
+  .social__item {
+    margin-left: 6px;
+  }
+  .social__icon {
+    fill: $white;
+    max-width: 36px;
+    max-height: 36px;
+  }
+}

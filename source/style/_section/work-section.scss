@@ -1,0 +1,32 @@
+.sec-works {
+  position: relative;
+  background-color: $middleGray;
+}
+
+.sec-works__content {
+  display: flex;
+  min-height: 650px;
+}
+.sec-works__col {
+  &_left {
+    @include columns(left);
+  }
+  &_right {
+    @include columns(right);
+  }
+}
+
+.sec-works__wrapper {
+  @include columns-wrapper();
+  position: relative;
+  &--left {
+    margin-left: auto;
+    padding: 20px;
+    position: relative;
+    height: 100%;
+  }
+  &--right {
+    margin-right: auto;
+    height: 100%;
+  }
+}
