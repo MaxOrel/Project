@@ -1,0 +1,11 @@
+mixin hero()
+    section.section.hero
+        .hero__background
+            img(src='assets/images/bg-main.jpg' alt="bg")
+        .section__wrapper.hero__inner
+            +ul('social', 'hero', {vk:'https://vk.com/max_orel', github:'https://github.com/MaxOrel', in:'https://github.com/MaxOrel'})
+            .hero__content
+                svg.hero__portfolio(viewBox="0 0 1175.495 313.961")
+                    use(xlink:href="assets/images/sprite.svg#icons--portfolio_header")
+                +user('hero')
+            +arrow('hero')

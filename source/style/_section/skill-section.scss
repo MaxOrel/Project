@@ -1,0 +1,18 @@
+.sec-skills {
+
+}
+.sec-skills-group {
+  margin-top: 47px;
+  &__item {
+    margin-bottom: 30px;
+  }
+  &__title {
+    font-size: 28px;
+    color: $darkGray;
+    font-weight: $mediumFont;
+    margin-bottom: 15px;
+  }
+}
+.sec-skills-list {
+  margin-right: -37px;
+}

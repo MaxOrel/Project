@@ -1,0 +1,41 @@
+.welcome {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 24px 100px 35px;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__login {
+    background-color: inherit;
+    border: 1px solid $white;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    font-size: $middleFont;
+    font-weight: $mediumFont;
+    line-height: 2.1;
+    margin-bottom: 20px;
+    outline: none;
+    @include roboto;
+    padding: 5px 27px;
+    align-self: flex-end;
+    opacity: 1;
+    &:hover {
+      background-color: $white;
+      color: $green;
+    }
+  }
+  &__footer {
+    color: $white;
+    font-weight: $lightFont;
+    margin-top: 20px;
+    text-align: center;
+  }
+}

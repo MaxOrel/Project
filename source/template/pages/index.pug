@@ -1,7 +1,45 @@
 extends ../_template
 
-block variables
-  - var title = 'Home page'
-
 block content
-  include ../common/_greating
+  section.section.welcome
+    .bgparallax
+    .welcome__inner.section__wrapper
+      button.welcome__login.active Авторизоваться
+      .card__wrapper.active
+        .card
+          .card__welcome
+            .card__content
+              +user('welcome')
+              +ul('social', 'welcome', {
+                  vk: 'https://vk.com/max_orel',
+                  github: 'https://github.com/maxOrel',
+                  in: 'https://github.com/maxOrel'
+              })
+            +nav('nav-welcome', {
+                'Мои работы': './portfolio.html',
+                'Обо мне': './about.html',
+                'Блог': './blog.html'
+            })
+          form.card__login#authorization(method='POST')
+            .card__content
+              +blockTitle('Авторизуйтесь', 'authorization')
+              .login-form
+                .login-form__item
+                  label.login-form__label
+                    input.login-form__input(name='login', type='text', placeholder='Логин', required)
+                .login-form__item
+                  label.login-form__label
+                    input.login-form__input(name='password', type='password', placeholder='Пароль', required)
+              +checkbox('noRobot', 'Я человек', 'checkbox')
+              p.card__content-text Вы точно не робот?
+              .card__content-radio
+                +checkbox('radio', 'Да', 'radio', '1')
+                +checkbox('radio', 'Не уверен', 'radio', '0')
+            .nav-welcome
+              ul.nav-welcome__list
+                li.nav-welcome__item
+                  a.nav-welcome__link На главную
+                li.nav-welcome__item
+                  input.nav-welcome__link(type='submit', value='Войти')
+      footer.welcome__footer
+        p © Иванов Максим | создано с любовью в LoftSchool | 2017

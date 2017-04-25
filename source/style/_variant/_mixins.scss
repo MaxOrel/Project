@@ -1,0 +1,62 @@
+%clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if ($axis == 'both') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $axis == 'max' {
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+  }
+  @if $axis == 'fullX' {
+    left:0;
+    right:0;
+  }
+  @if $axis == 'fullY' {
+    top:0;
+    bottom:0;
+  }
+}
+
+@mixin columns($axis: 'left') {
+  width: 50%;
+  @if ($axis == 'left') {
+    background: $lightGray;
+  }
+
+  @if $axis == 'right' {
+    background: $beige;
+  }
+}
+
+@mixin columns-wrapper() {
+  max-width: 900px;
+}
+
+@mixin background() {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

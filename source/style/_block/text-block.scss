@@ -1,0 +1,19 @@
+.block-text {
+  color: $darkGray;
+  font-size: $middleFont;
+  line-height: 1.6;
+  &__link {
+    padding: 0 5px;
+    color: $blue;
+    text-decoration: underline;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+  p {
+    padding-bottom: 10px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
