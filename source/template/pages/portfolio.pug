@@ -5,7 +5,7 @@ block content
         +hero()
         +hamburger()
         +navigation()
-        section.section.sec-works
+        section.section.sec-works.js-section
             +leftTriangle('works')
             +rightTriangle('works')
             +sectionTitle('works_header', 'Мои работы', 'works')
@@ -40,7 +40,7 @@ block content
                                         use(xlink:href="assets/images/sprite.svg#icons--arrow_down")
         section.section.reviews
             .reviews__background
-                img(src='assets/images/bg-footer.png')
+                img.js-reviews-bg(src='assets/images/bg-footer.png')
             +sectionTitle('about_header', 'Что обо мне говорят', 'reviews')
             ul.reviews-list
                 li.reviews-item
@@ -63,8 +63,8 @@ block content
                         .reviews-hero__content
                             p.reviews-hero__name Сабанцев Владимир
                             p преподаватель
-            form.feedback__wrapper#feedbackForm(method="POST")
-                .feedback__bg
+            form.feedback__wrapper.js-feedback-wrapper#feedbackForm(method="POST")
+                .feedback__bg.js-feedback-bg
                 .feedback
                     .feedback__inner
                         +blockTitle('Связаться со мной', 'feedback')

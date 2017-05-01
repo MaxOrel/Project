@@ -6,6 +6,12 @@
   text-align: center;
   min-height: 100vh;
   overflow: hidden;
+  @include tablets() {
+    padding: 2.5rem 1.5rem 0;
+  }
+  @include phones() {
+    padding: 2.5rem 0.7143rem 0;
+  }
   &__background {
     @include centered(max);
     min-width: 900px;
@@ -28,10 +34,25 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 70px;
+  @include tablets() {
+    margin-bottom: 3.5rem;
+  }
+  @include phones() {
+    flex-direction: column;
+    margin-bottom: 2.143rem;
+  }
 }
 .reviews-item {
   width:49%;
   margin-right: 2%;
+  @include phones() {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -45,12 +66,30 @@
     background-image: url('../images/sprite.png');
     width:33px;
     height: 29px;
+    @include tablets() {
+      margin-bottom: 15px;
+    }
+    @include phones() {
+      margin: 0 auto 1.1rem;
+      display: block;
+      width:2.357rem;
+      height: 2rem;
+    }
   }
   &__text {
     font-size: $middleFont;
     color: $darkGray;
     line-height: 1.6;
     margin-bottom: 20px;
+    @include tablets() {
+      font-size: 0.875rem;
+      margin-bottom: 15px;
+    }
+    @include phones() {
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
   }
 }
 .reviews-hero {
@@ -62,11 +101,18 @@
     overflow: hidden;
     max-width: 77px;
     max-height: 77px;
+    @include phones() {
+      max-width: 3.572rem;
+      max-height: 3.572rem;
+    }
   }
   &__content {
     color: #20b5a1;
     font-size: $middleFont;
     line-height: 1.5;
+    @include tablets() {
+      font-size: 0.875rem;
+    }
   }
   &__name {
     font-weight: $boldFont;

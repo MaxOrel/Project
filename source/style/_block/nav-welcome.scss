@@ -9,10 +9,15 @@
     display: flex;
   }
   &__item {
+    display: inline-block;
     background-color: $indexGreen;
     position: relative;
     flex-grow: 1;
     opacity: 0.85;
+    transition: background-color .5s;
+    &:hover {
+      background-color: $darkGreen;
+    }
     &:before {
       @include centered(fullY);
       left:-2px;
@@ -35,11 +40,18 @@
     font-size: $middleFont;
     border: none;
     outline: none;
+    width: 100%;
     @include roboto;
     cursor: pointer;
-    transition: all .5s;
+    transition: background-color .5s;
     &:hover {
       background-color: $darkGreen;
+    }
+    @include tablets() {
+      padding: 6.5px 26px;
+    }
+    @include phones() {
+      padding: 6.5px 22px;
     }
   }
 }

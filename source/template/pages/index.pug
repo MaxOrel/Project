@@ -2,9 +2,27 @@ extends ../_template
 
 block content
   section.section.welcome
-    .bgparallax
+    .bgparallax#parallaxMouse
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-2.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-3.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-4.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-5.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-6.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-7.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-8.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-9.png')
+      .bgparallax__layer
+          img.bgparallax__layer-img(src='assets/images/parallax-10.png')
     .welcome__inner.section__wrapper
-      button.welcome__login.active Авторизоваться
+      button.welcome__login.active.js-authorization#authorizationButton Авторизоваться
       .card__wrapper.active
         .card
           .card__welcome
@@ -38,7 +56,7 @@ block content
             .nav-welcome
               ul.nav-welcome__list
                 li.nav-welcome__item
-                  a.nav-welcome__link На главную
+                  a.nav-welcome__link.js-authorization На главную
                 li.nav-welcome__item
                   input.nav-welcome__link(type='submit', value='Войти')
       footer.welcome__footer

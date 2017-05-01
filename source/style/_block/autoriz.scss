@@ -21,12 +21,21 @@
       background-position: 15px 14px;
       background-repeat: no-repeat;
       background-image: url('../images/sprite.png');
+      @include phones() {
+        background-position: 0.9rem 0.875rem;
+      }
+    }
+    @include phones() {
+      margin-bottom: 1.5rem;
     }
     &:last-of-type {
       margin-bottom: 0;
     }
     &:nth-child(2):before {
       background-position: -20px 14px;
+      @include phones() {
+        background-position: -1.7rem 0.875rem;
+      }
     }
   }
   &__input {
@@ -38,6 +47,9 @@
     @include roboto;
     outline: none;
     font-size: $middleFont;
+    @include phones() {
+      padding: 1rem 1.25rem;
+    }
     &::-webkit-input-placeholder {
       color: rgba(55, 62, 66, .5);
       @include roboto;

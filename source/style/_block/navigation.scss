@@ -1,0 +1,100 @@
+.navigation {
+  opacity: 0;
+  display: block;
+  z-index:-10;
+  padding:2rem;
+  text-align: center;
+  width:100%;
+  background-color: rgba(0, 191, 165, 0.87);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: '';
+  height: 100%;
+  transition: opacity 0.5s;
+  &.active {
+    opacity: 1;
+    z-index:110;
+  }
+}
+.main-nav {
+  height: 100vh;
+  position: relative;
+  &.active {
+    .main-nav__item {
+      animation: fadeIn .5s ease forwards;
+      animation-delay: .45s;
+      &:nth-of-type(2) {
+        animation-delay: .55s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: .65s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: .75s;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include centered(both);
+  }
+  &__item {
+    @include bernierRegular;
+    font-size: 63px;
+    line-height: 1;
+    display: inline-block;
+    font-weight: $regularFont;
+    letter-spacing: 1px;
+    margin-bottom: 70px;
+    opacity:0;
+    @include tablets() {
+      font-size: 49px;
+      position: relative;
+      transform: translate(0, 0);
+      left: 0;
+    }
+    @include phones() {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  &__link {
+    color: $white;
+    position: relative;
+    &:before, &:after {
+      background-color: $white;
+      content: '';
+      width: 0;
+      height: 5px;
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.5s;
+      @include centered(y);
+    }
+    &:before {
+      left: -50px;
+    }
+    &:after {
+      right: -50px;
+    }
+    &:hover, &:focus {
+      &:before, &:after {
+        opacity: 1;
+        width: 22px;
+      }
+    }
+  }
+}
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
