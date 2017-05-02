@@ -15,7 +15,7 @@ mixin nav(className, items)
 
 mixin blockTitle(title, mod)
     .block-title__wrapper
-        .block-title(class=`block-title--${modificator}`)
+        .block-title(class=`block-title--${mod}`)
             h4.block-title__text= title
 
 mixin checkbox(item, text, type, value)
@@ -38,7 +38,7 @@ mixin skillsList(items)
                 .skill
                     svg.skill__circle
                         circle.skills__circle-under(cx="50%" cy="50%" r="50")
-                        circle.skills__circle-above(class=`skills__circle-above--${modificator}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                        circle.skills__circle-above(class=`skills__circle-above--${mod}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
                     h6.skill__title=item
 
 mixin leftTriangle(mod)

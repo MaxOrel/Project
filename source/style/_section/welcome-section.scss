@@ -11,6 +11,15 @@
     z-index: 10;
     justify-content: space-between;
     align-items: center;
+    @include desctop() {
+      padding: 24px 20px 30px;
+    }
+    @include tablets() {
+      padding: 24px 24px 30px;
+    }
+    @include phones() {
+      padding: 0.715rem;
+    }
   }
   &__login {
     background-color: inherit;
@@ -24,12 +33,21 @@
     margin-bottom: 20px;
     outline: none;
     @include roboto;
+    overflow: hidden;
     padding: 5px 27px;
+    transition: background-color .5s, color .5s;
     align-self: flex-end;
-    opacity: 1;
+    opacity: 0;
+    @include phones() {
+      padding: 5px 20px;
+      align-self: center;
+    }
     &:hover {
       background-color: $white;
       color: $green;
+    }
+    &.active {
+      opacity: 1;
     }
   }
   &__footer {
@@ -37,5 +55,13 @@
     font-weight: $lightFont;
     margin-top: 20px;
     text-align: center;
+    @include tablets() {
+      font-size: 0.875rem;
+    }
+    @include phones() {
+      font-size: 1rem;
+      line-height: 2rem;
+      width: 80%;
+    }
   }
 }

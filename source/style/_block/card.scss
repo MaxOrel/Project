@@ -1,5 +1,8 @@
+
 .card {
   background-color: rgba(252, 252, 252, .85);
+  transition: 0.6s;
+  transform-style: preserve-3d;
   border-top-left-radius: 4px;
   border-top-right-radius: 5px;
   position: relative;
@@ -7,23 +10,40 @@
   height: 409px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 5px;
-  z-index: 0;
+  @include phones() {
+    width: 20.5rem;
+    height: 25.5rem;
+  }
   &__wrapper {
     display: block;
     margin: auto;
     overflow: hidden;
     text-align: center;
+    opacity: 0;
+    &.active {
+      animation-name: menu;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    &.flip {
+      .card{
+        transform: rotateY(180deg);
+      }
+    }
   }
   &__welcome, &__login {
+    backface-visibility: hidden;
     bottom: 0;
     top:0;
     @include centered(fullX);
   }
   &__welcome {
- // display: none;
+    z-index: 2;
+    transform: rotateY(0deg);
   }
   &__login {
-    display:none;
+    transform: rotateY(180deg);
   }
   &__content {
     padding: 40px 20px;
@@ -43,5 +63,13 @@
         margin-right: 0;
       }
     }
+  }
+}
+@keyframes menu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
   }
 }

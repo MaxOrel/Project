@@ -7,6 +7,15 @@
   height: 35px;
   opacity: .7;
   z-index:10;
+  @include tablets() {
+    right:24px;
+  }
+  @include phones() {
+    top: 0.714rem;
+    right: 0.714rem;
+    height: 1.5rem;
+    width: 1.786rem;
+  }
   &:hover {
     opacity: 1;
   }
@@ -18,14 +27,45 @@
     height: 5px;
     width: 40px;
     transition: all .5s;
+    @include phones() {
+      width: 1.786rem;
+      height: 0.214rem;
+      border-radius: 0.143rem;
+    }
     &--top {
       top:0;
     }
     &--middle {
       top:15px;
+      @include phones() {
+        top:0.65rem;
+      }
     }
     &--bottom {
       bottom:0;
     }
   }
+  &.active {
+      opacity: 1;
+      z-index: 120;
+      .hamburger__line {
+        &--middle {
+          opacity: 0;
+        }
+        &--top {
+          transform: translateY(15px) translateX(0) rotate(45deg);
+          opacity: 1;
+          @include phones() {
+            transform: translateY(0.65rem) translateX(0) rotate(45deg);
+          }
+        }
+        &--bottom {
+          transform: translateY(-15px) translateX(0) rotate(-45deg);
+          opacity: 1;
+          @include phones() {
+            transform: translateY(-0.65rem) translateX(0) rotate(-45deg);
+          }
+        }
+      }
+    }
 }

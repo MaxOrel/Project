@@ -2,6 +2,9 @@
   background-color: rgba(55, 62, 66, .85);
   bottom: 0;
   @include centered(fullX);
+  @include phones() {
+    font-size: 0.928rem;
+  }
   z-index: 9999;
   &__top {
     position: relative;
@@ -20,6 +23,15 @@
     justify-content: space-between;
     padding: 20px;
     padding-left: 30px;
+    @include tablets() {
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 27px;
+    }
+    @include phones() {
+      padding-left: 1.5rem;
+      padding-top: 2.14rem;
+    }
   }
   &__bottom {
     padding: 10px 30px;
@@ -29,10 +41,33 @@
     opacity: .5;
     display: flex;
     justify-content: space-between;
+    @include tablets() {
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 15px;
+    }
+    @include phones() {
+      padding: 0.8rem 2.14rem;
+      padding-top: 1rem;
+    }
     p {
       max-width: 500px;
+      @include tablets() {
+        max-width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @include phones() {
+        margin-bottom: 1.1rem;
+      }
       &:last-child {
         text-align: right;
+        @include tablets() {
+          text-align: center;
+        }
       }
     }
   }
@@ -42,15 +77,29 @@
 }
 .footer-nav {
   margin-left: -35px;
+  @include tablets() {
+    margin-bottom: 15px;
+  }
+  @include phones() {
+    margin-left: -0.5rem;
+    margin-bottom: 0;
+  }
   &__item {
     margin-left: 35px;
     display: inline-block;
+    @include phones() {
+      margin-bottom: 1rem;
+      margin-left: 0.5rem;
+    }
   }
   &__link {
     color: $white;
     font-size: $middleFont;
     font-weight: $mediumFont;
-    transition: all .5s;
+    transition: color .5s;
+    @include phones() {
+      font-size: 0.928rem;
+    }
     &:hover, &:focus {
       color: $green;
     }

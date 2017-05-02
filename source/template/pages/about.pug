@@ -5,7 +5,7 @@ block content
         +hero()
         +hamburger()
         +navigation()
-        section.section.about
+        section.section.about.js-section.animate(data-animation='toSkills')
             .about__col.about__col--left
                 +leftTriangle('about')
                 .about__wrapper.about__wrapper--left
@@ -34,7 +34,7 @@ block content
                             p
                                 | Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не
                                 | сложные задачи на Backend. Но давайте по порядку.
-                        ul.sec-skills-group
+                        ul.sec-skills-group#skills
                             li.sec-skills-group__item
                                 h5.sec-skills-group__title Frontend
                                 +skillsList({
