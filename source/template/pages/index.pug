@@ -1,6 +1,7 @@
 extends ../_template
 
 block content
+  +preloader()
   section.section.welcome
     .bgparallax#parallaxMouse
       .bgparallax__layer
@@ -22,10 +23,10 @@ block content
       .bgparallax__layer
           img.bgparallax__layer-img(src='assets/images/parallax-10.png')
     .welcome__inner.section__wrapper
-      button.welcome__login.active.js-authorization#authorizationButton Авторизоваться
+      button.welcome__login.js-authorization.active#authorizationButton Авторизоваться
       .card__wrapper.active
         .card
-          .card__welcome
+          .card__welcome.active
             .card__content
               +user('welcome')
               +ul('social', 'welcome', {
@@ -38,9 +39,11 @@ block content
                 'Обо мне': './about.html',
                 'Блог': './blog.html'
             })
-          form.card__login#authorization(method='POST')
+          form.card__login#authorization(method='POST', action='login')
             .card__content
               +blockTitle('Авторизуйтесь', 'authorization')
+              .login-form__validation#validation
+              .status
               .login-form
                 .login-form__item
                   label.login-form__label

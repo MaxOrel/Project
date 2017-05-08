@@ -1,6 +1,7 @@
 extends ../_template
 
 block content
+    +preloader()
     .wrapper
         +hero()
         +hamburger()
@@ -9,32 +10,44 @@ block content
             +leftTriangle('works')
             +rightTriangle('works')
             +sectionTitle('works_header', 'Мои работы', 'works')
-            .sec-works__content
+            .sec-works__content#slider
                 .sec-works__col_left
                     .sec-works__wrapper.sec-works__wrapper--left
-                        .slider__image-wrapper
-                            img.slider__image(src='assets/images/img-1.png', alt='img-1.png')
+                        .slider__image-wrapper.js-slider-display
+                            img.slider__image.js-slider-display-img(src='assets/images/img-1.png', alt='img-1.png')
                         .work
                             +blockTitle('Сайт школы онлайн образования')
-                            p.work__tehnologes HTML, CSS, JAVASCRIPT
-                            a.work__link(href='https://vk.com/max_orel', target="_blank")
+                            p.work__tehnologes.js-slider-tehnologes HTML, CSS, JAVASCRIPT
+                            a.work__link.js-slider-site(href='https://vk.com/max_orel', target="_blank")
                                 span.work__link-text Посмотреть сайт
                                     svg.work__link-icon
                                         use(xlink:href="assets/images/sprite.svg#icons--link")
                 .sec-works__col_right
                     .sec-works__wrapper.sec-works__wrapper--right
                         .slider-list
-                            a.slider-list__link(href='#')
+                            a.slider-list__link.js-slider-bth--left(href='#')
                                 ul.slider-list__list.js-slider-list
-                                    li.slider-list__item.active
-                                        img.slider-list__image(src='assets/images/img-2.jpg', alt='img-2')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-1.png', data-title='Сайт школы онлайн образования', data-skills='HTML, CSS, JAVASCRIPT', data-link='http://loftschool.com')
+                                        img.slider-list__image(src='assets/images/img-1.png', alt='img-1')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-2.jpg', data-title='Сайт школы Атма йога', data-skills='HTML5, CSS3, SASS, JAVASCRIPT', data-link='http://atmayoga.ru/')
+                                        img.c-slider-list__image(src='assets/images/img-2.jpg', alt='Сайт школы Атма йога', title='Сайт школы Атма йога')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-3.jpg', data-title='Сайт дизайн студии T.G.D', data-skills='HTML5, CSS3, PUG, JQUERY', data-link='http://atmayoga.ru/')
+                                        img.slider-list__image(src='assets/images/img-3.jpg', alt='Сайт дизайн студии T.G.D', title='Сайт дизайн студии T.G.D')
+                                    li.slider-list__item.js-slider-item.active(data-full='assets/images/porto.jpg', data-title='Интернет магазин мебели Портомебель', data-skills='HTML5, CSS3, PUG, GULP, JQUERY', data-link='https://portomebel.ru/')
+                                        img.slider-list__image(src='assets/images/porto.jpg', alt='Портомебель', title='Портомебель')
                                 .slider-arrow
                                     svg.slider-arrow__img
                                         use(xlink:href="assets/images/sprite.svg#icons--arrow_down")
-                            a.slider-list__link(href='#')
+                            a.slider-list__link.js-slider-bth--right(href='#')
                                 ul.slider-list__list.js-slider-list
-                                    li.slider-list__item.active
-                                        img.slider-list__image(src='assets/images/img-3.jpg', alt='img-3')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-1.png', data-title='Сайт школы онлайн образования', data-skills='HTML, CSS, JAVASCRIPT', data-link='http://loftschool.com')
+                                        img.slider-list__image(src='assets/images/img-1.png', alt='img-1')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-2.jpg', data-title='Сайт школы Атма йога', data-skills='HTML5, CSS3, SASS, JAVASCRIPT', data-link='http://atmayoga.ru/')
+                                        img.c-slider-list__image(src='assets/images/img-2.jpg', alt='Сайт школы Атма йога', title='Сайт школы Атма йога')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/img-3.jpg', data-title='Сайт дизайн студии T.G.D', data-skills='HTML5, CSS3, PUG, JQUERY', data-link='http://atmayoga.ru/')
+                                        img.slider-list__image(src='assets/images/img-3.jpg', alt='Сайт дизайн студии T.G.D', title='Сайт дизайн студии T.G.D')
+                                    li.slider-list__item.js-slider-item(data-full='assets/images/porto.jpg', data-title='Интернет магазин мебели Портомебель', data-skills='HTML5, CSS3, PUG, GULP, JQUERY', data-link='https://portomebel.ru/')
+                                        img.slider-list__image(src='assets/images/porto.jpg', alt='Портомебель', title='Портомебель')
                                 .slider-arrow.slider-arrow--top
                                     svg.slider-arrow__img
                                         use(xlink:href="assets/images/sprite.svg#icons--arrow_down")
@@ -63,7 +76,7 @@ block content
                         .reviews-hero__content
                             p.reviews-hero__name Сабанцев Владимир
                             p преподаватель
-            form.feedback__wrapper.js-feedback-wrapper#feedbackForm(method="POST")
+            form.feedback__wrapper.js-feedback-wrapper#feedbackForm(action='contact' method="POST")
                 .feedback__bg.js-feedback-bg
                 .feedback
                     .feedback__inner
@@ -71,15 +84,16 @@ block content
                         .feedback-form
                             .feedback-form__item
                                 label.feedback-form__lebel
-                                    input.feedback-form__input(name='name')
+                                    input.feedback-form__input(name='name', type='text', placeholder='Имя', required)
                             .feedback-form__item
                                 label.feedback-form__lebel
-                                    input.feedback-form__input(name='email')
+                                    input.feedback-form__input(name='email', type='email', placeholder='Email', required)
                             .feedback-form__item
                                 label.feedback-form__lebel
-                                    textarea.feedback-form__textarea(name='text')
+                                    textarea.feedback-form__textarea(name='text', placeholder='Ваше сообщение', required)
                     .feedback-buttons
                         input.feedback-button.feedback-button--send(type='submit', value='Отправить')
                         input.feedback-button.feedback-button--clear(type='reset', value='Очистить')
             +arrow('feedback')
         +footer('portfolio')
+        +popup()

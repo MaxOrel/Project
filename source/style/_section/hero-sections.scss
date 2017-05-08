@@ -80,10 +80,10 @@
   min-height: 380px;
   max-height: 300px;
   @include tablets() {
-    min-height: 506px;
+    min-height: 450px;
   }
   @include phones() {
-    min-height: 39.643rem;
+    min-height: 30.643rem;
   }
   .hero__background {
     background-position: center 10%;
