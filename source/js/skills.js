@@ -37,3 +37,5 @@ $(function () {
     animateSkills.init();
   }
 });
+
+export {animateSkills};

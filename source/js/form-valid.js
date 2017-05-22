@@ -22,3 +22,5 @@ $(function () {
     feedbackForm.init();
   }
 });
+
+export {feedbackForm};

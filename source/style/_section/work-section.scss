@@ -5,6 +5,7 @@
 
 .sec-works__content {
   display: flex;
+  height: 100vh;
   min-height: 650px;
   @include tablets() {
     flex-direction: column;

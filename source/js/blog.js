@@ -96,3 +96,5 @@ $(function () {
     scrollMenu.init();
   }
 });
+
+export {scrollMenu};

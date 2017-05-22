@@ -62,3 +62,5 @@ var preloader = (function () {
 $(function () {
   preloader.init();
 });
+
+export {preloader};

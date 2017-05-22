@@ -1,0 +1,71 @@
+extends ../_template_admin
+
+block content
+    body.admin
+        .panel
+            h1.panel__title Панель администрирования
+            a(href='/index.html').panel__link Вернуться на сайт
+        .tabs.admin__tabs
+
+            input#tab-about(type='radio', name='tabs', checked='').tab__input
+            label(for='tab-about').tab__label
+                i.fa.fa-address-card-o
+                span Обо мне
+
+            input#tab-blog(type='radio', name='tabs').tab__input
+            label(for='tab-blog').tab__label
+                i.fa.fa-pencil-square-o
+                span Блог
+
+            input#tab-work(type='radio', name='tabs').tab__input
+            label(for='tab-work').tab__label
+                i.fa.fa-diamond
+                span Работы
+            .tab__contents
+                form#tab-about__content.tab__content
+                    h3.tab__content__title Страницы "Обо мне"
+                    //form(method="post").admin-form.admin-form_location_about#skills
+                    //    each val in items
+                    //        .admin-skills
+                    //            .admin-skills__title= val.section
+                    //            ul.admin-skills__list
+                    //                each lineSkill in val.items
+                    //                    li.admin-skills__item
+                    //                        label.admin-form__label
+                    //                            .admin-form__label-text= lineSkill.name
+                    //                            input(type="text" name=`${lineSkill.name}` value=`${lineSkill.value}`).admin-form__input
+                    //    .admin-form__button
+                    //        button.button.button_action_save
+                    //            .button__text Cохранить
+                    .btn-wrap
+                        button.contact-us__btn.btn-save(type='submit' form='tab-about__content' value="Submit") Сохранить
+                #tab-blog__content.tab__content
+                    h3 Страница "Блог"
+                    form.admin-blog__form#blog(method='POST')
+                        .status
+                        label.admin-blog__form-label Добавить запись
+                        input.admin-blog__form-input(type='text' name='title' placeholder='Название')
+                        label.form__input-line
+                            -
+                                var data = new Date().toLocaleDateString('ru', {
+                                year: 'numeric',
+                                month: '2-digit',
+                                day: '2-digit'
+                                })
+                        input.admin-blog__form-input(name="date" type="date" value=`${data}`).form__input
+                        //input.admin-blog__form-input(type='text' name='date' placeholder='xx.xx.xxxx')
+                        textarea.admin-blog__form-aria(type='text' name='text' placeholder='Содержание')
+
+                        input.admin-blog__form-submit(type='submit' value='Добавить')
+                #tab-work__content.tab__content
+                    h3 Страница "Портфолио"
+                    span#work-status
+                    form.admin-works__form(name='works' id='works' method='POST' enctype='multipart/form-data')
+                        label.admin-works__form-label Добавить работу
+                        input.admin-works__form-input(type='text' placeholder='Название проекта' id="file-desc" name='name')
+                        input.admin-works__form-input(type='text' placeholder='Технологии' id="file-teh" name='teh')
+                        input.admin-works__form-input(type='text' placeholder='Ссылка' id="file-link" name='link')
+                        input.admin-works__form-file(type='file' id="file-select" placeholder='Загрузка изображения' name='photo' accept='image/*')
+
+                        input.admin-works__form-submit(type='submit' value='Добавить')
+    +popup()

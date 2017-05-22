@@ -36,3 +36,5 @@ if ($('#slider').length) {
     }
   };
 }
+
+export {aviatitle};

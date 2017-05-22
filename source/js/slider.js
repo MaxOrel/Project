@@ -11,7 +11,8 @@ var sliderCont = (function () {
       link = container.find('.js-slider-site'),
       itemsLength = items.length,
       duration = 500,
-      flag = true;
+      flag = true,
+      that=this;
 
     var timeout;
 
@@ -25,7 +26,7 @@ var sliderCont = (function () {
         .append(markups)
         .find('.js-slider-item')
         .removeClass('active')
-        .eq(this.counter + 1)
+        .eq(that.counter + 1)
         .addClass('active');
     };
 
@@ -76,7 +77,7 @@ var sliderCont = (function () {
             .addClass('active')
             .siblings()
             .removeClass('active')
-            .css('top', '-110%')
+            .css('top', '-100%')
         });
 
     };
@@ -222,3 +223,45 @@ $(function () {
     sliderCont.init();
   }
 });
+
+
+
+//Анимация для букв
+if ($('#slider').length) {
+    var aviatitle = {
+        generate: function (string, block) {
+            var wordsArray = string.split(' '),
+                stringArray = string.split(''),
+                sentence = [],
+                word = '';
+            block.text('');
+            wordsArray.forEach(function (currentWord) {
+                var wordsArray = currentWord.split('');
+                wordsArray.forEach(function (letter) {
+                    var letterHtml = '<span class="letter-span">' + letter + '</span>';
+                    word += letterHtml;
+                });
+                var wordHTML = '<span class="letter-word">' + word + '</span>';
+                sentence.push(wordHTML);
+                word = '';
+            });
+            block.append(sentence.join(' '));
+            // анимация появления
+            var letters = block.find('.letter-span'),
+                counter = 0,
+                timer,
+                duration = 500 / stringArray.length;
+            function showLetters() {
+                var currentLetter = letters.eq(counter);
+                currentLetter.addClass('active');
+                counter++;
+                if (typeof timer !== 'undefined') {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(showLetters, duration);
+            }
+            showLetters();
+        }
+    };
+}
+export {sliderCont};

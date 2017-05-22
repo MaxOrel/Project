@@ -40,3 +40,5 @@ $(function () {
     AuthorizationSubmit.init();
   }
 });
+export {AuthorizationButton};
+export {AuthorizationSubmit};
