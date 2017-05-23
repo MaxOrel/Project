@@ -66,41 +66,41 @@
 
 .skills-list__item.active {
   .skills__circle-above {
-    &--html {
-      animation: html 2s ease forwards;
+    &--10 {
+      animation: i10 2s ease forwards;
     }
-    &--css {
-      animation: css 2s ease forwards;
+    &--20 {
+      animation: i20 2s ease forwards;
       animation-delay: .5s;
     }
-    &--js {
-      animation: js 2s ease forwards;
+    &--30 {
+      animation: i30 2s ease forwards;
       animation-delay: 1s;
     }
-    &--php {
-      animation: php 2s ease forwards;
+    &--40 {
+      animation: i40 2s ease forwards;
     }
-    &--mySQL {
-      animation: mySQL 2s ease forwards;
+    &--50 {
+      animation: i50 2s ease forwards;
       animation-delay: .5s;
     }
-    &--npm {
-      animation: npm 2s ease forwards;
+    &--60 {
+      animation: i60 2s ease forwards;
       animation-delay: 1s;
     }
-    &--mongo {
-      animation: mongo 2s ease forwards;
+    &--70 {
+      animation: i70 2s ease forwards;
       animation-delay: 1.5s;
     }
-    &--git {
-      animation: git 2s ease forwards;
+    &--80 {
+      animation: i80 2s ease forwards;
     }
-    &--gulp {
-      animation: gulp 2s ease forwards;
+    &--90 {
+      animation: i90 2s ease forwards;
       animation-delay: .5s;
     }
-    &--webpack {
-      animation: webpack 2s ease forwards;
+    &--100 {
+      animation: i100 2s ease forwards;
       animation-delay: 1s;
     }
     &--bower {
@@ -113,85 +113,85 @@
 
 }
 
-@keyframes html {
+@keyframes i10 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 230 360;
+    stroke-dasharray:36 360;
   }
 }
-@keyframes css {
+@keyframes i20 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 300 360;
+    stroke-dasharray: 72 360;
   }
 }
-@keyframes js {
+@keyframes i30 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 70 360;
+    stroke-dasharray: 108 360;
   }
 }
 
-@keyframes php {
+@keyframes i40 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 150 360;
+    stroke-dasharray: 144 360;
   }
 }
-@keyframes mySQL {
+@keyframes i50 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 90 360;
+    stroke-dasharray: 180 360;
   }
 }
-@keyframes npm {
+@keyframes i60 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 300 360;
+    stroke-dasharray: 216 360;
   }
 }
-@keyframes mongo {
+@keyframes i70 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
-    stroke-dasharray: 5 360;
+    stroke-dasharray: 252 360;
   }
 }
-@keyframes git {
+@keyframes i80 {
+  from {
+    stroke-dasharray: 0 360;
+  }
+  to {
+    stroke-dasharray: 288 360;
+  }
+}
+@keyframes i90 {
+  from {
+    stroke-dasharray: 0 360;
+  }
+  to {
+    stroke-dasharray: 324 360;
+  }
+}
+@keyframes i100 {
   from {
     stroke-dasharray: 0 360;
   }
   to {
     stroke-dasharray: 360 360;
-  }
-}
-@keyframes gulp {
-  from {
-    stroke-dasharray: 0 360;
-  }
-  to {
-    stroke-dasharray: 310 360;
-  }
-}
-@keyframes webpack {
-  from {
-    stroke-dasharray: 0 360;
-  }
-  to {
-    stroke-dasharray: 50 360;
   }
 }
 @keyframes bower {

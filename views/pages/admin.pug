@@ -22,41 +22,61 @@ block content
                 i.fa.fa-diamond
                 span Работы
             .tab__contents
-                form#tab-about__content.tab__content
+                #tab-about__content.tab__content
                     h3.tab__content__title Страницы "Обо мне"
-                    //form(method="post").admin-form.admin-form_location_about#skills
-                    //    each val in items
-                    //        .admin-skills
-                    //            .admin-skills__title= val.section
-                    //            ul.admin-skills__list
-                    //                each lineSkill in val.items
-                    //                    li.admin-skills__item
-                    //                        label.admin-form__label
-                    //                            .admin-form__label-text= lineSkill.name
-                    //                            input(type="text" name=`${lineSkill.name}` value=`${lineSkill.value}`).admin-form__input
-                    //    .admin-form__button
-                    //        button.button.button_action_save
-                    //            .button__text Cохранить
-                    .btn-wrap
-                        button.contact-us__btn.btn-save(type='submit' form='tab-about__content' value="Submit") Сохранить
+                    form(method="POST").admin-form.admin-form_location_about#skills
+                        .status
+                        each val in items
+                            .admin-skills
+                                .admin-skills__title= val.section
+                                ul.admin-skills__list
+                                    each lineSkill in val.items
+                                        li.admin-skills__item
+                                            label.admin-form__label
+                                                .admin-form__label-text= lineSkill.name
+                                                input(type="text" name=`${lineSkill.name}` value=`${lineSkill.value}`).admin-form__input
+                        .admin-form__button
+                            button.button.button_action_save
+                                .button__text Cохранить
                 #tab-blog__content.tab__content
                     h3 Страница "Блог"
                     form.admin-blog__form#blog(method='POST')
-                        .status
-                        label.admin-blog__form-label Добавить запись
-                        input.admin-blog__form-input(type='text' name='title' placeholder='Название')
-                        label.form__input-line
-                            -
-                                var data = new Date().toLocaleDateString('ru', {
-                                year: 'numeric',
-                                month: '2-digit',
-                                day: '2-digit'
-                                })
-                        input.admin-blog__form-input(name="date" type="date" value=`${data}`).form__input
-                        //input.admin-blog__form-input(type='text' name='date' placeholder='xx.xx.xxxx')
-                        textarea.admin-blog__form-aria(type='text' name='text' placeholder='Содержание')
 
-                        input.admin-blog__form-submit(type='submit' value='Добавить')
+                        .admin-form__inner
+                            label.admin-blog-form__title Добавить запись
+                            .form-valid.status
+                            .admin-blog-form
+                                .admin-blog-form__item
+                                    label.admin-blog-form__lebel
+                                        input.admin-blog-form__input(type='text' name='title' placeholder='Название')
+                                .admin-blog-form__item
+                                    label.admin-blog-form__lebel
+                                        -
+                                            var data = new Date().toLocaleDateString('ru', {
+                                            year: 'numeric',
+                                            month: '2-digit',
+                                            day: '2-digit'
+                                            })
+                                    input.admin-blog-form__input(name="date" type="date" value=`${data}`)
+                                .admin-blog-form__item
+                                    label.admin-blog-form__lebel
+                                        textarea.admin-blog-form__textarea(type='text' name='text' placeholder='Содержание')
+                        .admin-form-buttons
+                            input.admin-form-buttons_submit(type='submit' value='Добавить')
+                        //label.admin-blog__form__lebel Добавить запись
+                        //input.feedback-form__input(type='text' name='title' placeholder='Название')
+                        //label.form__input-line
+                        //    -
+                        //        var data = new Date().toLocaleDateString('ru', {
+                        //        year: 'numeric',
+                        //        month: '2-digit',
+                        //        day: '2-digit'
+                        //        })
+                        //input.admin-blog__form-input(name="date" type="date" value=`${data}`).form__input
+                        ////input.admin-blog__form-input(type='text' name='date' placeholder='xx.xx.xxxx')
+                        //textarea.admin-blog__form-aria(type='text' name='text' placeholder='Содержание')
+                        //
+                        //input.admin-blog__form-submit(type='submit' value='Добавить')
                 #tab-work__content.tab__content
                     h3 Страница "Портфолио"
                     span#work-status
