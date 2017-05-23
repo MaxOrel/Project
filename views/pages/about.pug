@@ -36,28 +36,17 @@ block content
                                 | Больше всего меня привлекет Frontend разработка, но я также знакома и могу решать не
                                 | сложные задачи на Backend. Но давайте по порядку.
                         ul.sec-skills-group#skills
-                            li.sec-skills-group__item
-                                h5.sec-skills-group__title Frontend
-                                +skillsList({
-                                    html: 'HTML5',
-                                    css: 'CSS3',
-                                    js: 'JavaScript & jQuery'
-                                })
-                            li.sec-skills-group__item
-                                h5.sec-skills-group__title Backend
-                                +skillsList({
-                                    php: 'PHP',
-                                    mySQL: 'mySQL',
-                                    npm: 'Node.js & npm',
-                                    mongo: 'Mongo.db'
-                                })
-                            li.sec-skills-group__item
-                                h5.sec-skills-group__title WorkFlow
-                                +skillsList({
-                                    git: 'Git',
-                                    gulp: 'Gulp',
-                                    bower: 'Bower'
-                                })
+                            each skillName in items
+                                li.sec-skills-group__item
+                                    h5.sec-skills-group__title= skillName.section
+                                    ul.sec-skills-list
+                                        each skill in skillName.items
+                                            li.skills-list__item
+                                                .skill
+                                                    svg.skill__circle
+                                                        circle.skills__circle-under(cx="50%" cy="50%" r="50")
+                                                        circle.skills__circle-above(class=`skills__circle-above--${skill.value}` cx="50%" cy="50%" r="50" transform="rotate(-90 60 60)")
+                                                        h6.skill__title= skill.name
         section.section.sec-map
             .map#map
             .sec-contacts
