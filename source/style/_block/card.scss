@@ -24,6 +24,7 @@
       animation-name: menu;
       animation-duration: 1s;
       animation-timing-function: linear;
+      transform-origin: 0 0;
       animation-fill-mode: forwards;
     }
     &.flip {

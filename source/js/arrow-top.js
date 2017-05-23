@@ -20,3 +20,4 @@ $(function () {
     Arrow.init();
   }
 });
+export {Arrow};

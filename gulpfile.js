@@ -19,7 +19,11 @@ global.$ = {
     babel : require('babelify'),
     browserSync: require('browser-sync').create(),
     fs : require('fs'),
-    gp: require('gulp-load-plugins')()
+    gp: require('gulp-load-plugins')({
+        rename: {
+            'gulp-replace-task': 'replaceTask'
+        }
+    })
 };
 
 $.path.task.forEach(function(taskPath) {
@@ -29,6 +33,7 @@ $.path.task.forEach(function(taskPath) {
 $.gulp.task('default', $.gulp.series(
     'clean',
     $.gulp.parallel(
+        'sass',
         'js:foundation',
         'js:process',
         'copy:image',
@@ -38,8 +43,7 @@ $.gulp.task('default', $.gulp.series(
         'sprite:png'
     ),
     $.gulp.parallel(
-        'sass',
-        'pug'
+        'nodemon'
     ),
     $.gulp.parallel(
         'watch',

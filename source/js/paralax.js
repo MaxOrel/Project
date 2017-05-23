@@ -78,3 +78,6 @@ $(function () {
     ParallaxMouse.init();
   }
 });
+
+export {ParallaxScroll};
+export {ParallaxMouse};

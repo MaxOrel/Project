@@ -1,0 +1,36 @@
+extends ../_template
+
+block content
+    +preloader()
+    .wrapper
+        +hero-blog()
+        +hamburger()
+        +navigation()
+        section.section.blog.js-section#blog
+            +leftTriangle('blog')
+            +rightTriangle('blog')
+            .blog-inner.section__wrapper
+                aside.blog-nav
+                    .blog-nav__inner.js-blog-inner
+                        ul.blog-nav__list.js-blog-nav
+                            each index in items
+                                li.blog-nav__item.js-blog-item= index.title
+                ul.blog-content
+                    each index in items
+                        li.blog-content__data.blog-data.active
+                            .blog-content__title= index.title
+                            -
+                                var data = new Date(index.date).toLocaleDateString('ru', {
+                                year: 'numeric',
+                                month: '2-digit',
+                                day: '2-digit'
+                                })
+                            .blog-content__date= data
+                            .blog-content__text= index.body
+    +footer('blog')
+    .news-menu.blocked
+                .news-menu__wrapper
+                    a.news-menu__handler
+                    ul.blog-nav__list.js-blog-nav
+                        each index in items
+                            li.blog-nav__item.blog-nav__item--news.js-blog-item= index.title

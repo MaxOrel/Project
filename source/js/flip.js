@@ -17,8 +17,28 @@ var AuthorizationButton = (function () {
     }
   }
 }());
+var AuthorizationSubmit = (function () {
+  return {
+    init: function () {
+      $("#authorization").submit(function (event) {
+        event.preventDefault();
+
+        if (!($("#noRobot").prop("checked") && $('input[name=radio]:checked', '#authorization').val() == 1)) {
+            $("#validation").text('Вы точно человек?');
+        } else {
+            $("#validation").text('Все успешно');
+        }
+      });
+    }
+  }
+}());
 $(function () {
   if ($('#authorizationButton').length) {
     AuthorizationButton.init();
   }
+  if ($('#authorization').length) {
+    AuthorizationSubmit.init();
+  }
 });
+export {AuthorizationButton};
+export {AuthorizationSubmit};

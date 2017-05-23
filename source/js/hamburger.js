@@ -4,8 +4,6 @@ var Hamburger = (function () {
     hamburger = $('.js-hamburger'),
     navContainer = $('.js-navigation'),
     navContent = $('.main-nav');
-    body = $('body');
-
   return {
     init: function () {
       hamburger.on('click', function (e) {
@@ -13,7 +11,7 @@ var Hamburger = (function () {
         var _this = $(this);
         _this.toggleClass('active');
         navContainer.toggleClass('active');
-        body.toggleClass('active');
+        $('body').toggleClass('active');
        setTimeout(function () {
         navContent.toggleClass('active');
       }, 300);
@@ -28,3 +26,5 @@ $(function () {
     Hamburger.init();
   }
 });
+
+export {Hamburger};

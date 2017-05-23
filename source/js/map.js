@@ -1,5 +1,5 @@
 //Карта на странице "обо мне"
-$(function () {
+var map = $(function () {
     var Maps;
     var Routes;
     var App;
@@ -188,3 +188,5 @@ $(function () {
         App.init();
     }
 });
+
+export {map};
